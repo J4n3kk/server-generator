@@ -1,0 +1,11 @@
+- name: kubeadm_install
+  hosts: controlplane_nodes
+  become: true
+  tasks:
+    - name: Ensure prerequisit packages are present
+      apt:
+        pkg:
+          - gpg
+          - curl
+          - apt-transport-https
+          - ca-certificates
