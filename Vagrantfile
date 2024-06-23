@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
     cp.vm.network "public_network",
       use_dhcp_assigned_default_route: true
     cp.vm.provider "virtualbox" do |vb|
-      vb.memory = 4096
+      vb.memory = 5120
       vb.cpus = 2 
     end
   end
@@ -30,5 +30,6 @@ Vagrant.configure("2") do |config|
       "controlplane_nodes" => ["controlplane"],
       "worker_nodes" => ["node01"] 
     }
+    ansible.verbose = "v"
   end
 end
